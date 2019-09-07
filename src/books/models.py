@@ -40,7 +40,36 @@ class Article(BaseModel):
     class Meta:
         db_table = 'article'
 
+    thumbnail = models.ImageField(upload_to=f"article/thumbnail/%Y/%m/%D/", default=None, null=True, blank=True)
+    image = models.ImageField(upload_to=f"article/image/%Y/%m/%D/", default=None, null=True, blank=True)
     judul = models.CharField(max_length=255, null=True, default=None)
     kata_kunci = models.CharField(max_length=255, null=True, default=None)
     deskripsi_pendek = models.CharField(max_length=255, null=True, default=None)
     isi_artikel = BinaryTextField()
+
+
+class News(BaseModel):
+    class Meta:
+        db_table = 'news'
+
+    thumbnail = models.ImageField(upload_to=f"article/thumbnail/%Y/%m/%D/", default=None, null=True, blank=True)
+    image = models.ImageField(upload_to=f"article/image/%Y/%m/%D/", default=None, null=True, blank=True)
+    judul = models.CharField(max_length=255, null=True, default=None)
+    kata_kunci = models.CharField(max_length=255, null=True, default=None)
+    deskripsi_pendek = models.CharField(max_length=255, null=True, default=None)
+    isi_artikel = BinaryTextField()
+
+
+class Affiliate(BaseModel):
+    class Meta:
+        db_table = 'affiliate'
+
+    thumbnail = models.ImageField(upload_to=f"article/thumbnail/%Y/%m/%D/", default=None, null=True, blank=True)
+    image = models.ImageField(upload_to=f"article/image/%Y/%m/%D/", default=None, null=True, blank=True)
+    alamat_toko = models.CharField(max_length=255, null=True, default=None)
+    nama_toko = models.CharField(max_length=255, null=True, default=None)
+    kata_kunci = models.CharField(max_length=255, null=True, default=None)
+    deskripsi_pendek = models.CharField(max_length=255, null=True, default=None)
+    lat = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True, default=0)
+    long = models.DecimalField(max_digits=22, decimal_places=16, blank=True, null=True, default=0)
+    deskripsi = BinaryTextField()
