@@ -62,7 +62,7 @@ MAX_PAGE_SIZE = 50
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!9ddfwq@1wa5mbyw&%9tvm%p2n+%l_w_5p5y=km$gvevp(-&uk'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '172.16.143.112', '10.0.2.2']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '172.16.143.112', '10.0.2.2', 'tracker-api']
 
 # This allow frontend and backend to run on different port, turn off in production
 CORS_ORIGIN_ALLOW_ALL = True if DEBUG else False
